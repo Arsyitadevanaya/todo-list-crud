@@ -1,0 +1,21 @@
+<!--from handling-->
+<form action="/api/todolist" method="POST" id="add_task">
+    <div class="new_task">
+        <div class="form-group">
+            <label for="task" class="text-light">Task</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="task" placeholder="Task">
+        </div>
+        <div class="form-group">
+            <label for="deadline" class="text-light">Deadline</label>
+            <input type="hidden" name="id" value="">
+            <input type="date" name="deadline">
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Submit</button>
+        </div>
+    </div>
+
+</form>
+<!--/from handling-->

@@ -1,0 +1,22 @@
+<% for (var i = 0; i < todolist.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= todolist[i].task %></td>
+        <td><%= formatDate(todolist[i].deadline) %></td>
+        <td><%= todolist[i].status %></td>
+        <td>
+            <a href="/update-task?id=<%= todolist[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fa-solid fa-pen-to-square"></i></span>
+            </a>
+            <a  class="btn border-shadow delete" data-id=<%= todolist[i]._id%>  >
+                <span class="text-gradient"><i class="fa-solid fa-trash"></i></span>
+            </a>
+        </td>
+    </tr>
+    <% } %>
+    
+    <% function formatDate(date) {
+        // Assuming `date` is a valid JavaScript Date object
+        return new Date(date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    } %>
+    
