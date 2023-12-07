@@ -3,7 +3,10 @@
         <td><%= i + 1 %></td>
         <td><%= todolist[i].task %></td>
         <td><%= formatDate(todolist[i].deadline) %></td>
-        <td><%= todolist[i].status %></td>
+        <td class="<%= todolist[i].status.toLowerCase() === 'done' ? 'done-status' : 'progress-status' %>">
+            <%= todolist[i].status %>
+        </td>
+        
         <td>
             <a href="/update-task?id=<%= todolist[i]._id%>" class="btn border-shadow update">
                 <span class="text-gradient"><i class="fa-solid fa-pen-to-square"></i></span>

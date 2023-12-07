@@ -1,5 +1,7 @@
+//Mengimpor modul Mongoose untuk berinteraksi dengan MongoDB
 const mongoose=require('mongoose');
 
+//Mendefinisikan skema (schema) untuk model todolist
 var schema = new mongoose.Schema({
     task: {
         type: String,
@@ -18,10 +20,12 @@ var schema = new mongoose.Schema({
     },
     status: {
         type: String,
-        default: "Pending"
+        default: "In progress"
     }
 });
 
+//Membuat model Mongoose dengan nama 'todolistdb' berdasarkan skema yang telah didefinisikan sebelumnya.
 const todolistdb=mongoose.model('todolistdb', schema);
 
+//Mengeskpor model todolistdb agar dapat digunakan di file lain dalam aplikasi.
 module.exports=todolistdb;
